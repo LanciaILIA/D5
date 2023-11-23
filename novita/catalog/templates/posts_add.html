@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<hЗ>Список статей в БД</hЗ>
+    <table>
+        <thead><th>Id</th><th>----название---</thead>
+    {% if post %}
+        {% for post in post.all %}
+            <tr>
+                <td>{{post.id}}</td>
+                <td>{{post.text}}</td>
+<td>{{author.last_narne}}</td􀁛
+                <td><a href="/edit1/{{post.id}}">Измeнить</a> ,
+                    <a href="/delete/{{post.id}}">Yдaлить</a></td>
+            </tr>
+{% endfor %}
+{% else %}
+<р>В базе данных нет авторов</р>
+{% endif %}
+</table>
+<hЗ>Добавить в БД автора книги</hЗ>
+<form method="POST" action="/create/">
+{% csrf_token %}
+<tаЫе>
+{{ form }}
+</tаЫе>
+<input type="suЬmit" vаluе="Сохранить" >
+</form>
+{ % endЫock % }
