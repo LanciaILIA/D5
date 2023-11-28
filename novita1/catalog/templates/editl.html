@@ -1,0 +1,15 @@
+{% extends "default.html" %}
+{% block content %}
+
+    <h4>Изменить статью:</h4>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <p><input type="text" name="name"
+                    value="{{name.title}}" />
+            </p>
+            <input type="submit" value="Сохранить">
+        </form>
+
+{% endblock %}
